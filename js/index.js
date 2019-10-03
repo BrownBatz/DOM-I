@@ -40,3 +40,81 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Setting all of the links to have the correct properties
+let links = document.querySelectorAll('a');
+for (let i = 0; i < links.length; i++){
+  links[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
+}
+
+// Now setting up the cta
+let headerOfCta = document.querySelector('.cta .cta-text h1');
+headerOfCta.textContent = siteContent["cta"]["h1"];
+
+let buttonOfCta = document.querySelector('.cta .cta-text button');
+buttonOfCta.textContent = siteContent["cta"]["button"];
+
+let ctaImg = document.querySelector('.cta #cta-img');
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+// setting up the main content
+
+  // Setting up top content
+let topContentHeaders = document.querySelectorAll(".main-content .top-content .text-content h4");
+topContentHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+topContentHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+
+let topContentText = document.querySelectorAll(".main-content .top-content .text-content p");
+topContentText[0].textContent = siteContent["main-content"]["features-content"];
+topContentText[1].textContent = siteContent["main-content"]["about-content"];
+
+
+  // Setting up the middle image
+let middleImage = document.querySelector("#middle-img");
+middleImage.setAttribute("src", siteContent["main-content"]["middle-img-src"]);
+
+  // Setting up bottom content
+let bottomContentHeaders = document.querySelectorAll(".main-content .bottom-content .text-content h4");
+bottomContentHeaders[0].textContent = siteContent["main-content"]["services-h4"];
+bottomContentHeaders[1].textContent = siteContent["main-content"]["product-h4"];
+bottomContentHeaders[2].textContent = siteContent["main-content"]["vision-h4"];
+
+let bottomContentText = document.querySelectorAll(".main-content .bottom-content .text-content p");
+bottomContentText[0].textContent = siteContent["main-content"]["services-content"];
+bottomContentText[1].textContent = siteContent["main-content"]["product-content"];
+bottomContentText[2].textContent = siteContent["main-content"]["vision-content"];
+
+// Setting up contact
+let contactHeader = document.querySelector(".contact h4");
+contactHeader.textContent = siteContent["contact"]["contact-h4"];
+
+let contactText = document.querySelectorAll(".contact p");
+contactText[0].textContent = siteContent["contact"]["address"];
+contactText[1].textContent = siteContent["contact"]["phone"];
+contactText[2].textContent = siteContent["contact"]["email"];
+
+// Setting up footer
+let footerText = document.querySelector("footer p");
+footerText.textContent = siteContent["footer"]["copyright"];
+
+
+//////// Task 3 /////////
+
+// Changing the nav text to be green
+for (let i = 0; i < links.length; i++){
+  links[i].style.color = "green";
+}
+let navSection = document.querySelector("nav");
+
+// Creating new links to add
+let firstLink = document.createElement('a');
+firstLink.textContent = "This is the first link";
+firstLink.style.color = "green";
+firstLink.setAttribute("href", "#");
+navSection.prepend(firstLink);
+
+let lastLink = document.createElement('a');
+lastLink.textContent = "This is the last link";
+lastLink.style.color = "green";
+lastLink.setAttribute("href", "#");
+navSection.append(lastLink);
